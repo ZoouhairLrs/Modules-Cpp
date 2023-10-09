@@ -1,0 +1,28 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/09/27 22:51:41 by zlaarous          #+#    #+#              #
+#    Updated: 2023/09/27 22:52:00 by zlaarous         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = FILE
+
+CPFLAGS = c++ -Wall -Wextra -Werror -std=c++98
+
+CFILES = main.cpp
+
+all : $(NAME)
+
+$(NAME) : $(CFILES)
+			$(CPFLAGS) $^ -o $@
+
+clean : rm -rf megaphone
+
+fclean : clean
+
+re : clean all
