@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 16:20:06 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/10/24 17:31:05 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/10/26 19:42:35 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class PhoneBook{
     public :
         Contact contact[8];
         int     index;
-
+    PhoneBook(){}
 };
 
 #endif
