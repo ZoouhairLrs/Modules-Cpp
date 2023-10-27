@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 16:20:06 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/10/27 19:42:47 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/10/27 22:34:47 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ class PhoneBook{
 
     public:
         PhoneBook(){}
-        // void    Add_Contact(PhoneBook &pb);
-        // void    Search_contact(PhoneBook &pb);
 };
 
 #endif
