@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 16:19:45 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/10/24 00:37:31 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/10/27 19:55:42 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ using std::getline;
 
 //class about contact
 class Contact{
-    public :
+    private:
         string first_Name;
         string last_Name;
         string neck_Name;
         string phone_Number;
         string darkest_Secret;
 
+    public:
 //constrictor default
     Contact(){}
 
@@ -42,6 +43,27 @@ class Contact{
         neck_Name = n;
         phone_Number = p;
         darkest_Secret = ds;
+    }
+    
+//getters
+    string getFirst_Name(void) const{
+        return first_Name;
+    }
+
+    string getLast_Name(void) const{
+        return last_Name;
+    }
+    
+    string getNeck_Name(void) const{
+        return neck_Name;
+    }
+    
+    string getPhone_Number(void) const{
+        return phone_Number;
+    }
+    
+    string getDarkest_Secret(void) const{
+        return darkest_Secret;
     }
 // void Add_Contact(void);
 };
