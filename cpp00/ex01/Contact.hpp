@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 16:19:45 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/10/27 19:55:42 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/10/27 21:49:41 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #include <iomanip>  
 
 using std::string;
@@ -46,26 +47,22 @@ class Contact{
     }
     
 //getters
-    string getFirst_Name(void) const{
-        return first_Name;
-    }
+    string getFirst_Name(void) const{ return first_Name; }
 
-    string getLast_Name(void) const{
-        return last_Name;
-    }
+    string getLast_Name(void) const{ return last_Name; }
     
-    string getNeck_Name(void) const{
-        return neck_Name;
-    }
+    string getNeck_Name(void) const{ return neck_Name; }
     
-    string getPhone_Number(void) const{
-        return phone_Number;
-    }
+    string getPhone_Number(void) const{ return phone_Number; }
     
-    string getDarkest_Secret(void) const{
-        return darkest_Secret;
-    }
-// void Add_Contact(void);
+    string getDarkest_Secret(void) const{ return darkest_Secret; }
+
+//setters
+    void setFirst_Name(const std::string& value) { first_Name = value; }
+    void setLast_Name(const std::string& value) { last_Name = value; }
+    void setNeck_Name(const std::string& value) { neck_Name = value; }
+    void setPhone_Number(const std::string& value) { phone_Number = value; }
+    void setDarkest_Secret(const std::string& value) { darkest_Secret = value; }
 };
 
 #endif
