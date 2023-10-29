@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 16:19:45 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/10/28 13:54:58 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/10/29 13:28:19 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,9 @@ class Contact{
     
 //getters
     string getFirst_Name(void) const{ return first_Name; }
-
     string getLast_Name(void) const{ return last_Name; }
-    
     string getNeck_Name(void) const{ return neck_Name; }
-    
     string getPhone_Number(void) const{ return phone_Number; }
-    
     string getDarkest_Secret(void) const{ return darkest_Secret; }
 
 //setters
