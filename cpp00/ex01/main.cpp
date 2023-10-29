@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 16:19:51 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/10/27 22:33:44 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/10/29 13:20:49 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,15 @@ void	print_value(string str)
 	else
 		cout <<str;
 }
+bool ContainsSpaceOrTab(const string &str)
+{
+    for (size_t i = 0; i < str.length(); i++) {
+        if (str[i] == ' ' || str[i] == '\t') {
+            return true;
+        }
+    }
+    return false;
+}
 
 void    Add_Contact(PhoneBook &pb)
 {
@@ -41,7 +50,7 @@ void    Add_Contact(PhoneBook &pb)
 
     while (true) {
         std::cout << "Enter a valid first name: ";
-        if (!getline(std::cin, input) || input.empty()) {
+        if (!getline(std::cin, input) || input.empty() || ContainsSpaceOrTab(input)) {
             if (std::cin.eof())
                 exit(0);
             std::cout << "Field is empty or invalid. Please enter a valid first name." << std::endl;
@@ -53,10 +62,10 @@ void    Add_Contact(PhoneBook &pb)
 
     while (true) {
         std::cout << "Enter a valid last name: ";
-        if (!getline(std::cin, input) || input.empty()) {
+        if (!getline(std::cin, input) || input.empty() || ContainsSpaceOrTab(input)) {
             if (std::cin.eof())
                 exit(0);
-            std::cout << "Field is empty or invalid. Please enter a valid first name." << std::endl;
+            std::cout << "Field is empty or invalid. Please enter a valid last name." << std::endl;
         } else {
             contact.setLast_Name(input);
             break;
@@ -65,10 +74,10 @@ void    Add_Contact(PhoneBook &pb)
 
     while (true) {
         std::cout << "Enter a valid neck name: ";
-        if (!getline(std::cin, input) || input.empty()) {
+        if (!getline(std::cin, input) || input.empty() || ContainsSpaceOrTab(input)) {
             if (std::cin.eof())
                 exit(0);
-            std::cout << "Field is empty or invalid. Please enter a valid first name." << std::endl;
+            std::cout << "Field is empty or invalid. Please enter a valid neck name." << std::endl;
         } else {
             contact.setNeck_Name(input);
             break;
@@ -77,10 +86,10 @@ void    Add_Contact(PhoneBook &pb)
 
     while (true) {
         std::cout << "Enter a valid phone number : ";
-        if (!getline(std::cin, input) || input.empty()) {
+        if (!getline(std::cin, input) || input.empty() || ContainsSpaceOrTab(input)) {
             if (std::cin.eof())
                 exit(0);
-            std::cout << "Field is empty or invalid. Please enter a valid first name." << std::endl;
+            std::cout << "Field is empty or invalid. Please enter a valid phone number." << std::endl;
         } else {
             contact.setPhone_Number(input);
             break;
@@ -89,10 +98,10 @@ void    Add_Contact(PhoneBook &pb)
 
     while (true) {
         std::cout << "Enter a valid darkest secret: ";
-        if (!getline(std::cin, input) || input.empty()) {
+        if (!getline(std::cin, input) || input.empty() || ContainsSpaceOrTab(input)) {
             if (std::cin.eof())
                 exit(0);
-            std::cout << "Field is empty or invalid. Please enter a valid first name." << std::endl;
+            std::cout << "Field is empty or invalid. Please enter a valid darkest secret." << std::endl;
         } else {
             contact.setDarkest_Secret(input);
             break;
@@ -104,8 +113,8 @@ void    Add_Contact(PhoneBook &pb)
         i = 0;
     pb.contact[i] = contact;
     i++;
-    cout << "User " << i << " has been added successfully" << endl;
-    welcomeScreen();
+    cout << "User " << i << " has been added successfully." << endl;
+    cout << "press any key for next step!";
 }
 
 void    Search_contact(PhoneBook &pb)
@@ -114,33 +123,34 @@ void    Search_contact(PhoneBook &pb)
     int i;
 
     i = 0;
-    id = 0;
     cout << "|" << std::setw(10) << "index" << "|" << std::setw(10) << "firstName" << "|" << std::setw(10) << "lastName" << "|" << std::setw(10) <<"nickName";
     cout << "|" << endl;
     while (i < 8)
     {
         cout << "|" << std::setw(10) << i;
         cout << "|" << std::setw(10);
-        print_value(pb.contact[id].getFirst_Name());
+        print_value(pb.contact[i].getFirst_Name());
         cout << "|" << std::setw(10);
-        print_value(pb.contact[id].getLast_Name());
+        print_value(pb.contact[i].getLast_Name());
         cout << "|" << std::setw(10);
-        print_value(pb.contact[id].getNeck_Name());
+        print_value(pb.contact[i].getNeck_Name());
         cout << "|" << endl;
         i++;
-        id++;
     }
 
     cout<<"Enter The search index :"<< endl;
-    string  id_search;
-    cin >> id;
-    if ((!std::getline(cin, id_search)))
+    string s = "";
+    cin >> s;
+    if(s.empty() || s.find_first_of("0123456789"))
     {
-            cout << "Error input." << endl;
-            return ;
+        cout << "inalide index !" << endl;
+        return ;
     }
-    if (id < 0 || id > 8)
-        cout << "not find contact index! press Enter!!" << endl;
+    id = atoi(s.c_str());
+    if (id < 0 || id > 7){
+        cout << "not find contact index! press Enter!!\n";
+        return ;
+    }
     else
     {
         cout << "|" << std::setw(10) << "index" << "|" << std::setw(10) << "firstName" << "|" << std::setw(10) << "lastName" << "|" << std::setw(10) <<"nickName" << "|" << std::setw(10) <<"PNumber" << "|" << std::setw(10) <<"dSecret";
@@ -158,7 +168,6 @@ void    Search_contact(PhoneBook &pb)
         cout << pb.contact[id].getDarkest_Secret();
         cout << "|" << endl;
     }
-    welcomeScreen();
 }
 
 int main()
@@ -166,27 +175,28 @@ int main()
     string  command;
     PhoneBook phone;
 
-    welcomeScreen();
     while (1)
     {
+        welcomeScreen();
         cin.clear();
         cout << ">>enter ur choise : ";
-        if (!std::getline(cin, command))
+        getline(cin, command);
+        if (std::cin.eof())
             exit(0);
-        else if (!command.compare("ADD") || !command.compare("add"))
+        if (!command.compare("ADD") || !command.compare("add"))
             Add_Contact(phone);
         else if (!command.compare("SEARCH") || !command.compare("search"))
             Search_contact(phone);
         else if (!command.compare("EXIT") || !command.compare("exit"))
         {
-            cout << "exit program. " << endl;
+            cout << "exit program." << endl;
             break;   
         }
-        else
-        {
-            cout << "wrong intput. " << endl;
-            welcomeScreen();
+        else {
+            cout << "invalid command." << endl;
+            cout << "Enter any key for next step !" << endl;
         }
+        cin.ignore();
     }
     return (0);
 }

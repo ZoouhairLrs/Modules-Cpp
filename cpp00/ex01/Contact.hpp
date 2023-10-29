@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 16:19:45 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/10/27 21:49:41 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/10/28 13:54:58 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include <cstdlib>
 #include <iomanip>  
+#include <ctype.h>
 
 using std::string;
 using std::cout;
