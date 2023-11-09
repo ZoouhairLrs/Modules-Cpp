@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 22:13:55 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/11/09 18:47:02 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/11/09 21:27:50 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int Fixed::getRawBits(){
     return(fixed_point);
 }
 
-Fixed &Fixed::operator=(const Fixed &obj_point)
+Fixed &Fixed::operator = (const Fixed &obj_point)
 {
     if (this != &obj_point)
         fixed_point = obj_point.fixed_point;
@@ -35,62 +35,62 @@ Fixed &Fixed::operator=(const Fixed &obj_point)
 
 Fixed Fixed::operator + (Fixed const &obj) const
 {
-	return Fixed(this->fixed_point + obj.fixed_point);
+	return Fixed(this->toFloat() + obj.toFloat());
 }
 
 Fixed Fixed::operator - (Fixed const &obj) const
 {
-	return Fixed(this->fixed_point - obj.fixed_point);
+	return Fixed(this->toFloat() - obj.toFloat());
 }
 
 Fixed Fixed::operator * (Fixed const &obj) const
 {
-	return Fixed(this->fixed_point * obj.fixed_point);
+	return Fixed(this->toFloat() * obj.toFloat());
 }
 
 Fixed Fixed::operator / (Fixed const &obj) const
 {
-	return Fixed(this->fixed_point / obj.fixed_point); // change obj.toFloat() to obj();
+	return Fixed(this->toFloat() / obj.toFloat());
 }
 
 bool Fixed::operator > ( const Fixed &obj) const
 {
-    if (this->fixed_point > obj.toFloat())
+    if (this->toFloat() > obj.toFloat())
         return (true);
     return (false);
 }
 
 bool Fixed::operator < ( const Fixed &obj) const
 {
-    if (this->fixed_point < obj.toFloat())
+    if (this->toFloat() < obj.toFloat())
         return (true);
     return (false);
 }
 
 bool Fixed::operator >= ( const Fixed &obj) const
 {
-    if (this->fixed_point >= obj.toFloat())
+    if (this->toFloat() >= obj.toFloat())
         return (true);
     return (false);
 }
 
 bool Fixed::operator <= ( const Fixed &obj) const
 {
-    if (this->fixed_point <= obj.toFloat())
+    if (this->toFloat() <= obj.toFloat())
         return (true);
     return (false);
 }
 
 bool Fixed::operator == ( const Fixed &obj) const
 {
-    if (this->fixed_point == obj.toFloat())
+    if (this->toFloat() == obj.toFloat())
         return (true);
     return (false);
 }
 
 bool Fixed::operator != ( const Fixed &obj) const
 {
-    if (this->fixed_point != obj.toFloat())
+    if (this->toFloat() != obj.toFloat())
         return (true);
     return (false);
 }
@@ -164,16 +164,14 @@ float Fixed::toFloat() const{
 
 Fixed::Fixed(const int i){
     fixed_point = (int) roundf(i * 256);
-
 }
 
 Fixed::Fixed(const float f){
     fixed_point = roundf(f * 256);
-
 }
 
-std::ostream &operator<< (std::ostream &out, const Fixed &flt)
-{
+std::ostream &operator << (std::ostream &out, const Fixed &flt)
+{ 
 	out << flt.toFloat();
 	return out;
 }
