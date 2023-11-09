@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:16:46 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/09/26 18:32:27 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/11/03 17:52:55 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ class HumanB{
         std::string name;
         weapon *weaponPtr;
     public:
-        HumanB(std::string name)
-        {this->name = name;}
+        HumanB(std::string name);
         HumanB(void){};
         void setWeapon(weapon &weapon);
         void attack();

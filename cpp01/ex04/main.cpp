@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 22:45:18 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/09/28 02:06:18 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/11/03 03:22:46 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ int main(int ac, char *av[]) {
     string s1 = av[2];
     string s2 = av[3];
 
+    // if s1 is empty
+    if (s1.empty())
+    {
+        cerr << "first par. cannot be empty" << endl;
+        return 1;
+    }
     // Open the input file for reading
     ifstream inputFile(filename.c_str());
     if (!inputFile) {
@@ -47,7 +53,7 @@ int main(int ac, char *av[]) {
             line.replace(pos, s1.length(), s2);
             pos += s2.length();
         }
-        outputFile << line << '\n'; // Write the modified line to the output file
+        outputFile << line << '\n';
     }
 
     // Close both files

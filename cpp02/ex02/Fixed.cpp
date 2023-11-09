@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 22:13:55 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/10/03 03:25:05 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:17:11 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,22 @@ Fixed &Fixed::operator=(const Fixed &obj_point)
 
 Fixed Fixed::operator + (Fixed const &obj) const
 {
-	return Fixed(this->fixed_point + obj.toFloat());
+	return Fixed(this->fixed_point + obj.fixed_point);
 }
 
 Fixed Fixed::operator - (Fixed const &obj) const
 {
-	return Fixed(this->fixed_point - obj.toFloat());
+	return Fixed(this->fixed_point - obj.fixed_point);
 }
 
 Fixed Fixed::operator * (Fixed const &obj) const
 {
-	return Fixed(this->fixed_point * obj.toFloat());
+	return Fixed(this->fixed_point * obj.fixed_point);
 }
 
 Fixed Fixed::operator / (Fixed const &obj) const
 {
-	return Fixed(this->fixed_point / obj.toFloat());
+	return Fixed(this->fixed_point / obj.fixed_point); // change obj.toFloat() to obj();
 }
 
 bool Fixed::operator > ( const Fixed &obj) const

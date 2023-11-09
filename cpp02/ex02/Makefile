@@ -6,7 +6,7 @@
 #    By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 23:04:17 by zlaarous          #+#    #+#              #
-#    Updated: 2023/10/29 16:45:49 by zlaarous         ###   ########.fr        #
+#    Updated: 2023/11/09 16:01:36 by zlaarous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ $(NAME) : $(CFILES)
 			$(CPFLAGS) $^ -o $@
 
 clean : 
-	rm -rf megaphone
+	rm -rf fixed
 
 fclean : clean
 
