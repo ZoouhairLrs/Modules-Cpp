@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 22:13:55 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/11/09 16:17:11 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/11/09 18:47:02 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,11 +164,12 @@ float Fixed::toFloat() const{
 
 Fixed::Fixed(const int i){
     fixed_point = (int) roundf(i * 256);
+
 }
 
 Fixed::Fixed(const float f){
     fixed_point = roundf(f * 256);
-    toFloat();
+
 }
 
 std::ostream &operator<< (std::ostream &out, const Fixed &flt)
