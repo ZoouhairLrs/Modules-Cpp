@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:35:44 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/10/06 17:53:27 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/11/30 00:46:33 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,17 @@ class Cat : public Animal
         virtual ~Cat();
         Cat(const Cat &Cat);
         Cat &operator = (const Cat &Cat);
-
-        void	makeSound(void) const;
+        void	makeSound() const;
 };
 
 class WrongCat : public WrongAnimal
 {
 public:
-	WrongCat(void);
-	virtual ~WrongCat(void);
+	WrongCat();
+	virtual ~WrongCat();
 	WrongCat(const WrongCat& other);
-	WrongCat& operator=(const WrongCat &obj);
-	void	makeSound(void) const;
+	WrongCat& operator = (const WrongCat &obj);
+	void	makeSound() const;
 };
 
 #endif

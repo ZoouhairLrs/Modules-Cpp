@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:35:44 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/10/06 17:41:31 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:44:16 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Dog : public Animal
         Dog(const Dog &dog);
         Dog &operator = (const Dog& _dog);
 
-        void	makeSound(void) const;
+        void makeSound() const;
 };
 
 #endif

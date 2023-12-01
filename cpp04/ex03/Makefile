@@ -6,11 +6,11 @@
 #    By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 22:32:36 by zlaarous          #+#    #+#              #
-#    Updated: 2023/12/01 09:27:36 by zlaarous         ###   ########.fr        #
+#    Updated: 2023/12/01 10:32:00 by zlaarous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Abstract
+NAME = Interface
 
 CPFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
@@ -22,7 +22,7 @@ $(NAME) : $(CFILES)
 			$(CPFLAGS) $^ -o $@
 
 clean : 
-	rm -rf Abstract
+	rm -rf Interface
 
 fclean : clean
 

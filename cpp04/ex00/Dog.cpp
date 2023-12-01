@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:36:55 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/10/06 17:46:26 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/11/30 13:04:40 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ Dog &Dog::operator=(const Dog &dog)
 
 void Dog::makeSound() const
 {
-    std::cout << "Woof!" << std::endl;
+    std::cout << "Woof! 🐶" << std::endl;
 }

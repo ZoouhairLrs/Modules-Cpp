@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:35:44 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/10/06 17:53:27 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/11/29 15:18:16 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 # define CAT_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal
 {
+    
+    Brain *brain;
     public:
         Cat();
         virtual ~Cat();

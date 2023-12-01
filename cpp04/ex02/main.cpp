@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 22:33:02 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/11/09 20:29:15 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/12/01 09:23:37 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,41 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
-#define ANIMAL_COUNT 8
+#define ANIMAL_COUNT 10
 
 int main()
 {
-    Animal* j = new Dog();
-	Animal* i = new Cat();
+	Cat cat;
+	Cat newCat = cat;
 
-    delete j;//should not create a leak
-    delete i;
+	// std::cout << &cat << std::endl;	
 
-    Cat Basic;
-    {
-        Cat tmp = Basic;
-    }
+	// cat = cat;
+	Dog dog;
+	Dog d = dog;
+    // Animal	*animals[ANIMAL_COUNT];
 
-    Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
-    for ( int i = 0; i < 4; i++ ) {
-        delete animals[i];
-    }
-	return 0;
+	// int a = 1337; //initialize a
+	// int b;
+	// b = 1337; //assign 1337 to b
+
+	// const c;
+
+	// c = 1337; //error
+
+	// const int d = 1337; //initialize d
+
+	// for (int i = 0; i < ANIMAL_COUNT; i++)
+	// {
+	// 	if (i < ANIMAL_COUNT / 2)
+	// 		animals[i] = new Dog();
+	// 	else
+	// 		animals[i] = new Cat();
+	// 	std::cout << animals[i]->getType() << std::endl;
+	// }
+
+	// for (int i = 0; i < ANIMAL_COUNT; i++)
+	// 	delete animals[i];
+
+    return 0;
 }

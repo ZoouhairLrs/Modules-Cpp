@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:12:11 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/10/09 18:43:24 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/12/01 09:27:43 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Animal {
         Animal(const Animal &obj);
         Animal &operator = (const Animal &obj);
         std::string getType() const;
-        virtual void makeSound() const;
+        virtual void makeSound() const = 0;
 };
 
 class WrongAnimal : public Animal {
@@ -38,7 +38,7 @@ class WrongAnimal : public Animal {
         WrongAnimal(WrongAnimal const &obj);
         WrongAnimal &operator = (const WrongAnimal &obj);
         
-        void makeSound() const = 0;
+        void makeSound() const;
 };
 
 #endif
