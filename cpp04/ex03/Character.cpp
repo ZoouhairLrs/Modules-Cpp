@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 17:13:20 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/12/02 19:09:42 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/12/03 21:40:33 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void Character::unequip(int idx)
 {
     if (idx < 0 || idx > 3)
         return ;
+    delete slot[idx];
     slot[idx] = NULL;
 }
 

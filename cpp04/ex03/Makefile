@@ -6,7 +6,7 @@
 #    By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 22:32:36 by zlaarous          #+#    #+#              #
-#    Updated: 2023/12/01 10:32:00 by zlaarous         ###   ########.fr        #
+#    Updated: 2023/12/03 21:39:07 by zlaarous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,12 @@ NAME = Interface
 
 CPFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
-CFILES = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+CFILES = main.cpp \
+		 AMateria.cpp \
+		 Character.cpp \
+		 Cure.cpp \
+		 Ice.cpp \
+		 MateriaSource.cpp
 
 all : $(NAME)
 
