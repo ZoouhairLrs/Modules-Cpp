@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 17:13:15 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/12/02 19:09:38 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/12/03 19:54:42 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ class Character : public ICharacter
         Character();
         Character(std::string const _name);
         Character(const Character &obj);
-        virtual ~Character();
-
         Character &operator=(const Character &obj);
+        virtual ~Character();
 
         std::string const &getName() const;
         void setName(std::string const &name);
