@@ -6,7 +6,7 @@
 /*   By: zlaarous <zlaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:53:47 by zlaarous          #+#    #+#             */
-/*   Updated: 2023/12/02 20:44:10 by zlaarous         ###   ########.fr       */
+/*   Updated: 2023/12/03 22:26:16 by zlaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 # include <iostream>
 # include <string>
+# include "ICharacter.hpp"
 
-class ICharacter;
+// class ICharacter;
 class AMateria
 {
     protected:
